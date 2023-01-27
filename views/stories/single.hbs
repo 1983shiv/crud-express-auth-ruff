@@ -4,7 +4,12 @@
     Edit
     <i class="fas fa-edit"></i>
   </a>
-  <form action="/stories/delete/{{story._id}}" method="POST" id="delete-form">
+  <form
+    action="/stories/delete/{{story._id}}"
+    method="POST"
+    id="delete-form"
+    style="float: right;"
+  >
     <input type="hidden" name="_method" value="DELETE" />
     <button class="btn red btn-small" type="submit">
       <i class="fas fa-trash"></i>
@@ -14,13 +19,13 @@
 
 <div class="row">
   <h1>{{story.title}}</h1>
-  <h6>{{story.status}}</h6>
+  <h6>Status : {{story.status}}</h6>
   <p>{{{story.body}}}</p>
 </div>
 
 <div class="row">
   <div class="chip">
-    Posted by:
+    Author by:
     <img src="{{story.user.image}}" alt="user image" />
     <a href="/stories/user/{{user._id}}">{{story.user.displayName}}</a>
   </div>
