@@ -1,0 +1,37 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add express mongoose connect-mongo express-session express-handlebars dotenv method-override moment morgan passport passport-google-oauth20
+
+PATH: 
+  C:\ffmpeg\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Python310\;C:\Python310\Scripts;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;C:\Program Files\Microsoft VS Code\bin;C:\Program Files (x86)\Yarn\bin\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin\;C:\Program Files\IVI Foundation\VISA\Win64\Bin\;C:\Program Files (x86)\IVI Foundation\IVI\bin;C:\Program Files\IVI Foundation\IVI\bin;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk-18;c:\tools\php8;c:\tools\php81;C:\ProgramData\ComposerSetup\bin;C:\Program Files\PuTTY\;C:\Ruby27-x64\bin;C:\Users\ninja\AppData\Roaming\npm;C:\Users\ninja\AppData\Local\Yarn\bin;C:\Users\ninja\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\PyCharm Community Edition 2021.3.1\b;C:\Ruby27-x64\bin;C:\Users\ninja\AppData\Roaming\npm;C:\Users\ninja\AppData\Local\Yarn\bin;C:\Users\ninja\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\PyCharm Community Edition 2021.3.1\bin;;C:\Users\ninja\AppData\Roaming\Composer\vendor\bin;c:\\Python310\Scripts\playwright.exe;C:\Program Files\heroku\bin
+
+Yarn version: 
+  1.22.5
+
+Node version: 
+  16.10.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: ENOENT: no such file or directory, copyfile 'C:\Users\ninja\AppData\Local\Yarn\Cache\v6\npm-once-1.4.0-583b1aa775961d4b113ac17d9c50baef9dd76bd1-integrity\node_modules\once\README.md' -> 'D:\Work\nextjs\reactcrud\node_modules\once\README.md'
+
+npm manifest: 
+  {
+    "name": "stories",
+    "version": "1.0.0",
+    "description": "Building CRUD Operation using Express with Authetication",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
