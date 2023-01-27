@@ -1,6 +1,4 @@
-<h6>Dashboard</h6>
 <h3>Welcome {{name}} </h3>
-<p>Here are you stories</p>
 
 {{#if stories}}
   <table class="striped">
@@ -9,7 +7,7 @@
         <td>Title</td>
         <td>Date</td>
         <td>Status</td>
-        <td></td>
+        <td>Action</td>
       </tr>
     </thead>
     <tbody>
@@ -18,7 +16,21 @@
           <td><a href="/stories/{{_id}}">{{title}}</a></td>
           <td>{{formatDate createdAt "MMMM Do YYYY hh:mm:ss a"}}</td>
           <td><span class="dash-status">{{status}}</span></td>
-          <td></td>
+          <td>
+            <a href="/stories/edit/{{_id}}" class="btn btn-float btn-small">
+              <i class="fas fa-edit"></i>
+            </a>
+            <form
+              action="/stories/delete/{{_id}}"
+              method="POST"
+              id="delete-form"
+            >
+              <input type="hidden" name="_method" value="DELETE" />
+              <button class="btn red btn-small" type="submit">
+                <i class="fas fa-trash"></i>
+              </button>
+            </form>
+          </td>
         </tr>
       {{/each}}
     </tbody>
