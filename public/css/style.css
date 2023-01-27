@@ -17,3 +17,7 @@ p{
     float: left;
     margin-right: 10px;
 }
+
+form#delete-form {
+    float: right !important;
+}

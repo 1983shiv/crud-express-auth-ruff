@@ -3,6 +3,7 @@ const express = require("express");
 const router = express.Router();
 const { ensureAuth } = require("../middleware/auth");
 const Story = require("../models/Story");
+const { populate } = require("../models/Story");
 
 // @desc  Show all Stories
 // @route GET  /stories/index
@@ -21,11 +22,34 @@ router.get("/", ensureAuth, async (req, res) => {
   }
 });
 
+// @desc Stories single page
+// @route GET  /stories/{{id}}
+router.get("/:id", ensureAuth, async (req, res) => {
+  try {
+    const story = await Story.findById(req.params.id).populate("user").lean();
+
+    if (!story) {
+      return res.render("error/404");
+    } else {
+      res.render("stories/single", {
+        story,
+      });
+    }
+  } catch (error) {
+    console.warn(error);
+    res.render("error/500");
+  }
+});
+
 // @desc Stories add page
 // @route GET  /stories/add
-
 router.get("/add", ensureAuth, (req, res) => {
-  res.render("stories/add");
+  try {
+    res.render("stories/add");
+  } catch (error) {
+    console.warn(error);
+    res.render("error/500");
+  }
 });
 
 // @desc  Process the add form
