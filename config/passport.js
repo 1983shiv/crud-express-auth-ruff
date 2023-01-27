@@ -1,5 +1,4 @@
 const GoogleStrategy = require("passport-google-oauth20");
-const mongoose = require("mongoose");
 const User = require("../models/User");
 
 module.exports = function (passport) {
@@ -42,11 +41,17 @@ module.exports = function (passport) {
     process.nextTick(() => done(null, { id: user.id }))
   );
 
-  passport.deserializeUser((user, done) =>
-    process.nextTick(() => {
-      return done(null, user);
-    })
-  );
+  passport.deserializeUser(function (user, done) {
+    User.findById(user.id, function (err, user) {
+      done(err, user);
+    });
+  });
+
+  // passport.deserializeUser((user, done) =>
+  //   process.nextTick(() => {
+  //     return done(null, user);
+  //   })
+  // );
 
   //   passport.serializeUser((user, done) => {
   //     done(null, user.id);
@@ -54,9 +59,9 @@ module.exports = function (passport) {
   //   });
 
   //   passport.deserializeUser(function (id, done) {
-  //     User.findById(id, function (err, user) {
-  //       done(err, user);
-  //     });
+  // User.findById(id, function (err, user) {
+  //   done(err, user);
+  // });
   //   });
 
   // updated version of above code using es6, rather than callback, user arrow function

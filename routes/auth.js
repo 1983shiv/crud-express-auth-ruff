@@ -17,4 +17,15 @@ router.get(
   }
 );
 
+// @desc    Logout User
+// @route   GET  /auth/logout
+router.get("/logout", (req, res) => {
+  req.logout((err) => {
+    if (err) {
+      console.log("error occured during logout", err.message);
+    }
+    res.redirect("/");
+  });
+});
+
 module.exports = router;
